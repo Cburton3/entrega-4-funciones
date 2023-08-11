@@ -1,4 +1,3 @@
-
 const element = document.querySelector(".numero-turno");
 let currentNumber = parseInt(element?.innerText);
 const text = document.querySelector(".texto-turno");
