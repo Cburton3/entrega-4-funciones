@@ -2,6 +2,8 @@
 function enter() : void {
   const element = document.querySelector(".numero-turno");
   const number = document.getElementById('input-number') as HTMLInputElement;
+  const text = document.querySelector(".texto-turno");
+
   if (
     element !== null &&
     element !== undefined &&
@@ -11,10 +13,12 @@ function enter() : void {
     number instanceof HTMLElement
   ) {
     element.textContent = number.value;
-    // let currentNumber = parseInt(element.innerText);
-    // element.innerText = `${currentNumber}`.padStart(2, "0");
-    // currentNumber = number.value;
+    let currentNumber = parseInt(element.innerText);
+    element.innerText = `${currentNumber}`.padStart(2, "0");
+  } else if (text !== null && text !== undefined && text instanceof HTMLElement) {
+    text.textContent = "Por favor, pon un número";
   }
+   
 }
 
 const enterButton = document.getElementById("enter");
@@ -33,8 +37,10 @@ function nextNumber(): void {
     element !== undefined &&
     element instanceof HTMLHeadingElement
   ) {
-    let currentNumber = parseInt(element.innerText);
-    element.textContent = `${++currentNumber}`.padStart(2, "0");
+    let currentNumber = parseInt(element.innerText); //inner text here just gets you the string text between teh two tags. the inner text part is just referncing it
+    //curretNumber is coverted to a number in order to run the ++ operation 
+    element.textContent = `${++currentNumber}`.padStart(2, "0"); //as using the .padstart you'd be referencing the currentNumber.padstart instead of 'currnetNumber and then applying the padstart to it.
+    //We convert the number back to a stringinorder to run teh padstart op which needs a string
     // element.innerText = "Por favor, acérquese al mostrador";
   }
 }
