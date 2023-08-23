@@ -10,7 +10,7 @@ function enter() : void {
     number !== undefined &&
     number instanceof HTMLElement
   ) {
-    element.innerText = number.value;
+    element.textContent = number.value;
     // let currentNumber = parseInt(element.innerText);
     // element.innerText = `${currentNumber}`.padStart(2, "0");
     // currentNumber = number.value;
@@ -34,7 +34,7 @@ function nextNumber(): void {
     element instanceof HTMLHeadingElement
   ) {
     let currentNumber = parseInt(element.innerText);
-    element.innerText = `${++currentNumber}`.padStart(2, "0");
+    element.textContent = `${++currentNumber}`.padStart(2, "0");
     // element.innerText = "Por favor, acérquese al mostrador";
   }
 }
@@ -49,10 +49,10 @@ function previousNumber(): void {
     let currentNumber = parseInt(element.innerText);
     if (currentNumber > 0) {
       currentNumber = --currentNumber;
-      element.innerText = `${currentNumber}`.padStart(2, "0");
+      element.textContent = `${currentNumber}`.padStart(2, "0");
       const text = document.querySelector(".texto-turno");
       if (text !== null && text !== undefined && text instanceof HTMLElement) {
-        text.innerText = "Ya siendo atentido";
+        text.textContent = "Ya siendo atentido";
       }
     }
   }
@@ -72,7 +72,7 @@ function resetNumber(): void {
       element.innerText = `${currentNumber}`.padStart(2, "0");
       const text = document.querySelector(".texto-turno");
       if (text !== null && text !== undefined && text instanceof HTMLElement) {
-        text.innerText = "Espere a ser atendido";
+        text.textContent = "Espere a ser atendido";
       }
     }
   }
@@ -81,7 +81,7 @@ const nextButton = document.getElementById("next");
 if (
   nextButton !== null &&
   nextButton !== undefined &&
-  nextButton instanceof HTMLHeadingElement
+  nextButton instanceof HTMLButtonElement
 ) {
   nextButton.addEventListener("click", () => nextNumber());
 }
@@ -90,7 +90,7 @@ const backButton = document.getElementById("back");
 if (
   backButton !== null &&
   backButton !== undefined &&
-  backButton instanceof HTMLHeadingElement
+  backButton instanceof HTMLButtonElement
 ) {
   backButton.addEventListener("click", () => previousNumber());
 }
@@ -98,7 +98,7 @@ const resetButton = document.getElementById("reset");
 if (
   resetButton !== null &&
   resetButton !== undefined &&
-  resetButton instanceof HTMLHeadingElement
+  resetButton instanceof HTMLButtonElement
 ) {
   resetButton.addEventListener("click", () => resetNumber());
 }
