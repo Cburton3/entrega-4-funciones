@@ -3,12 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="./src/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Vite + TS</title>
   </head>
   <body>
-    <div id="app">
-      <h1>Bootcamp JS - JavaScript SandBox</h1>
+    <div class="turno-display">
+      <h1 class="numero-turno">01</h1>
+      <p class="texto-turno">Por favor, acérquese al mostrador</p>
+    </div>
+    <div class="button-container">
+      <button id="back">Back</button>
+      <button id="reset">Reset</button>
+      <input id="input-number" type="text" placeholder="Pon número aquí"> 
+      <button id="enter">Enter</button>
+      <button id="next">Next</button>
     </div>
     <script type="module" src="/src/main.js"></script>
   </body>
